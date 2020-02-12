@@ -1,0 +1,13 @@
+<div 
+[myFavorite]="studentList.isFavorite"
+*ngFor="let studentList of studentLists"
+[ngClass]="{ 'student-name': studentList.name === 'Luffy', 'student-age': studentList.age === 30 }"
+>
+<h1>Student List</h1>
+<p>Student Name: {{studentList.name}}</p>
+<p>Student Age: {{studentList.age}}</p>
+<p>Student Major: {{studentList.major}}</p>
+<p>Student School: {{studentList.school}}</p>
+<p>Student isFavorite: {{studentList.isFavorite}}</p>
+<br/>
+</div>

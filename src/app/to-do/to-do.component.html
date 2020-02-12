@@ -1,0 +1,11 @@
+<div class="to-do">
+  <input type="text" value="value" maxlength="30" [(ngModel)]="firstCharacter" (input)="searchTodo()" placeholder="search" onfocus="this.value=''" />
+  <br>
+  <br>
+  <input type="text" maxlength="30" #newTodo
+  (keyup.enter)="addTodo(newTodo.value)" placeholder="Enter the thing to do..." onfocus="this.value=''" />
+  <button (click)="addTodo(newTodo.value)">Add</button>
+  <ul><li 
+    *ngFor="let todo of todos, let i = index"
+    (click)="removeTodo(i)">{{todo}}</li></ul>
+</div>
