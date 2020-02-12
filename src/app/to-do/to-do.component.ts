@@ -13,23 +13,15 @@ export class ToDoComponent implements OnInit {
 
     addTodo:any;
     removeTodo:any;
-    todoService:TodoService;
 
-    constructor(todoService: TodoService) {
+    constructor(private todoService: TodoService) {
         this.todos = todoService.getTodos();
         this.addTodo = todoService.addTodo;
         this.removeTodo = todoService.removeTodo;
     }
 
     ngOnInit() {
-        this.todos = [
-            "swimming",
-            "running",
-            "hiking",
-            "taking shower",
-            "eating",
-            "sleeping"
-        ];
+        this.todos = this.todoService.todos;
     }
 
     searchTodo(){
